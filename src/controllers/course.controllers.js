@@ -1,9 +1,9 @@
 const Course = require("../models/course.model");
 
 const addCourse = async (req, res) => {
-    const { name, description } = req.body;
+    const { code, name, description } = req.body;
     // data validation
-    const course = new Course({ name, description });
+    const course = new Course({ code, name, description });
     // const course = new course(req.body);
     // try {
     await course.save();
@@ -41,7 +41,7 @@ const updateCourseById = async (req, res) => {
             name,
             description,
         },
-        { new: true }
+        { new: true, runValidators: true }
     ).exec();
     // await course.findOneAndUpdate({email}, {})
     if (!course) {
