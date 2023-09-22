@@ -14,7 +14,7 @@ npm-debug.log*
 /dist
 
 # Ignore npm lock file
-package.lock
+package-lock
 
 # Ignore macOS metadata and resource forks
 .DS_Store
